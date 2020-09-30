@@ -2,6 +2,14 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const moment = require('moment');
+const connection = require('./database/connection');
+
+// Database Connection
+connection.authenticate().then(() => {
+  console.log('Database Ok');
+}).catch((err) => {
+  console.log(err);
+});
 
 // Body Parser
 app.use(bodyParser.urlencoded({ extended: false }) );
