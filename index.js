@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const moment = require('moment');
 const connection = require('./database/connection');
 const slugify = require('slugify');
+const Post = require('./posts/Post');
+const Author = require('./authors/Author');
 
 // Database Connection
 connection.authenticate().then(() => {
